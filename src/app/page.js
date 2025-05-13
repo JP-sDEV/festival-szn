@@ -1,15 +1,17 @@
-import Image from "next/image";
-import { anton } from "./fonts";
-import PosterRenderer from "./components/PosterRenderer";
-import LoginButton from "./components/LoginButton";
+"use client";
+
+import LandingPage from "./landing";
+import { AppProvider } from "./context/AppContext";
+import { SessionProvider } from "next-auth/react";
 
 export default function Home() {
   return (
     <div>
-      <div>
-        <LoginButton />
-      </div>
-      <PosterRenderer type={"alphabetical"} />
+      <SessionProvider>
+        <AppProvider>
+          <LandingPage />
+        </AppProvider>
+      </SessionProvider>
     </div>
   );
 }
