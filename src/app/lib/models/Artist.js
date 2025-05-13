@@ -1,8 +1,7 @@
 // artist.js
 export class Artist {
-  constructor(name, genres = [], popularity = 0) {
+  constructor(name, popularity = 0) {
     this.name = name;
-    this.genres = genres;
     this.popularity = popularity;
   }
 
